@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% url 'blog/(?P<id>\d+)' as post_url %}
+{% load staticfiles %}
+{% load social_share %}
+
+
+{% block content %}
+
+    <div class="row">
+
+                        <h2>{{ post.title }}</h2>
+
+                        {% if post.image %}
+                            <img id="blogpic" src="/media/{{ post.image }}">
+                        {% endif %}
+
+
+
+                        <p>{{ post.content|linebreaks }}</p>
+
+                        <p class='small'>Published:   {{ post.published_date }}</p>
+
+                        <ul class="list-inline banner-social-buttons">
+                            <li>{% post_to_facebook object_or_url "<button class='btn btn-default><i class='fa fa-facebook-square'></i> Post to Facebook </button>" %}</li>
+                            <li>{% post_to_twitter "Check out this cool blogpost" object_or_url "<button class='btn btn-default><i class='fa fa-twitter-square'></i> Post to Twitter </button>" %}</li>
+                            <li>{% post_to_gplus  object_or_url "<button class='btn btn-default><i class='fa fa-google+'></i> Post to Google+ </button>" %}</li>
+                        </ul>
+
+                        <button class=" btn btn-default" onclick="location.href='/blog'">Back to Blog</button>
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Emmet Driver</h1>
+                        <h1 class="brand-heading">Media</h1>
+                        <p class="intro-text">Musings and thoughts.</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About Me</h2>
+                <p>A few lines about me and the history of what I do. </p>
+                <p>Some more lines about my experience along with a way to <a href="#contact">contact me</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2> {{ last_post.title }}</h2>
+
+                    <p>{{ last_post.content|linebreaks|truncatewords:30 }}</p>
+
+                    <button class=" btn btn-default" onclick="location.href='/blog/{{ last_post.id }}'">Read More of my latest blog post</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Article Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>{{ last_article.title }}</h2>
+                <p>{{ last_article.synopsis|linebreaks }}</p>
+                <button class=" btn btn-default" onclick="location.href='{{ last_article.id }}'">Read More</button>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Start Bootstrap</h2>
+                <p>Feel free to email us to provide some feedback on my blog, give me suggestions for new articles, or to ask about my work!</p>
+                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://vimeo.com/user4199656" class="btn btn-default btn-lg"><i class="fa fa-vimeo-square fa-fw"></i> <span class="network-name">Vimeo</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/emmet-driver-55151990" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+    {% for article in articles %}
+
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.synopsis|linebreaks }}</p>
+        <p class="small">{{ article.published_date }}</p>
+        <br>
+        <p>
+            <button class=" btn btn-default" onclick="location.href={{ article.link }}">Read More</button>
+        <hr>
+
+    {% endfor %}
+
+
+{% endblock %}
