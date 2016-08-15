@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'contact',
     'homepage',
     'django_forms_bootstrap',
+    'django_social_share',
 )
 
 MIDDLEWARE_CLASSES = (
