@@ -8,10 +8,11 @@
 
         <h3>{{ article.title }}</h3>
         <p>{{ article.synopsis|linebreaks }}</p>
+
         <p class="small">{{ article.published_date }}</p>
         <br>
         <p>
-            <button class=" btn btn-default" onclick="location.href={{ article.link }}">Read More</button>
+            <button class=" btn btn-default" onclick="window.open('{{ article.link }}')">Read in Original Webpage</button>
         <hr>
 
     {% endfor %}
