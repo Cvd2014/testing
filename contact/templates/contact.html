@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% load bootstrap_tags %}
+
+
+
+{% block header %}
+<div></div>
+{% endblock%}
+
+{% block content %}
+
+            <h3>Any questions:</h3>
+            <p>If you have any comments about my writings, any ideas about new articles or want to commission me to write for you feel free to contact me here</p>
+
+
+            <form class="form" method="post">
+                {% csrf_token %}
+
+                {{ form|as_bootstrap_horizontal }}
+
+                <div class="form-actions">
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+
+        <h5>Or contact me on social media...</h5>
+        <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://vimeo.com/user4199656" class="btn btn-default btn-lg"><i class="fa fa-vimeo-square fa-fw"></i> <span class="network-name">Vimeo</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/emmet-driver-55151990" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+                    </li>
+                </ul>
+
+    </div>
+{% endblock %}
+
+

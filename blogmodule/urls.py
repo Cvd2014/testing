@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'',include('blog.urls')),
     url(r'^$', include('homepage.urls')),
     url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':MEDIA_ROOT}),
-    url(r'',include('articles.urls'))
+    url(r'',include('articles.urls')),
+    url(r'',include('contact.urls'))
 ]

@@ -53,8 +53,8 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>{{ last_article.title }}</h2>
                 <p>{{ last_article.synopsis|linebreaks }}</p>
-                <button class=" btn btn-default" onclick="location.href='{{ last_article.id }}'">Read More</button>
-
+                <button class=" btn btn-default" onclick="location.href='{{ last_article.id }}'">Read The Article</button><!-- addon popup and link to new tab-->
+            </div>
         </div>
     </section>
 
@@ -64,7 +64,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Start Bootstrap</h2>
                 <p>Feel free to email us to provide some feedback on my blog, give me suggestions for new articles, or to ask about my work!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                <p><a href="{% url 'contact' %}">feedback@emmetdrivermedia.com</a>
                 </p>
                 <ul class="list-inline banner-social-buttons">
                     <li>
